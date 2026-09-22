@@ -1,0 +1,4 @@
+CREATE TABLE IF NOT EXISTS subscribers (id INTEGER PRIMARY KEY AUTOINCREMENT,email TEXT NOT NULL UNIQUE,created_at TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS tool_submissions (id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT NOT NULL,url TEXT NOT NULL,category TEXT NOT NULL,pricing TEXT,description TEXT,contact TEXT NOT NULL,listing TEXT NOT NULL DEFAULT 'standard',status TEXT NOT NULL DEFAULT 'pending',created_at TEXT NOT NULL);
+CREATE INDEX IF NOT EXISTS idx_tool_submissions_status ON tool_submissions(status);
+CREATE INDEX IF NOT EXISTS idx_tool_submissions_created_at ON tool_submissions(created_at);
